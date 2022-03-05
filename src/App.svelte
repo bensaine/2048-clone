@@ -1,10 +1,12 @@
 <script>
-	export let name;
+	import Grid from './Grid.svelte';
+	let score = 0;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>2048 clone</h1>
+	<span class="score">Score: {score}</span>
+	<Grid dimensions={4} bind:score={score}></Grid>
 </main>
 
 <style>
@@ -19,6 +21,13 @@
 		color: #ff3e00;
 		text-transform: uppercase;
 		font-size: 4em;
+		font-weight: 100;
+	}
+
+	.score {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 2em;
 		font-weight: 100;
 	}
 
